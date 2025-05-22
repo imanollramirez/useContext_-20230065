@@ -1,8 +1,15 @@
-import React from "react";
 import "./Information.css";
+import { useNavigate } from "react-router-dom";
 
-const Information = () => (
-  <div className="info-container">
+const Information = () => {
+
+  const navigate = useNavigate();
+
+  const Dashboard = () => { navigate("/dashboard") };
+  
+  return (
+    <>
+      <div className="info-container">
     <h1>¿Qué es <code>useContext</code> en React?</h1>
     <p>
       <strong>useContext</strong> es un hook de React que permite acceder al valor de un contexto directamente en un componente funcional, sin necesidad de utilizar el componente <code>Context.Consumer</code>.
@@ -24,8 +31,14 @@ function MyComponent() {
     </pre>
     <p>
       En este ejemplo, <code>useContext(MyContext)</code> devuelve el valor actual del contexto <code>MyContext</code>.
-    </p>
+    </p> <br />
+
+    <button className="dashboard-button" onClick={Dashboard}>
+                    Dashboard
+                </button>
   </div>
-);
+    </>
+  )
+};
 
 export default Information;

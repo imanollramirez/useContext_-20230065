@@ -14,17 +14,21 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email || !password) {
-      toast.error("Por favor, completa todos los campos.");
+      toast.error("Please, fill the fields!");
       return;
-    } else if (Login(email, password)) {
-      //utilizamos la función Login del contexto de autenticación
-      toast.success("Inicio de sesión exitoso.");
+    } 
+    else if (Login(email, password)) { 
       navigate("/dashboard");
-    } else {
-      toast.error("Credenciales incorrectas. Por favor, intenta de nuevo.");
+    } 
+    else {
+      toast.error("Invalid credentials, try again.");
       return;
     }
   };
+
+  const Information = () => {
+    navigate("/information2")
+};
 
   return (
     <div className="login-container">
@@ -36,7 +40,6 @@ const Login = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
             placeholder="ejemplo@correo.com"
           />
         </label>
@@ -46,14 +49,17 @@ const Login = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
             placeholder="Contraseña"
           />
         </label>
-        <button type="submit">Entrar</button>
-      </form>
+        <button type="submit">Ingresar</button>
+      </form><br />
+      <button className="dashboard-button" onClick={Information}>
+                    Information
+                </button>
+
       <Toaster
-        position="top-right"
+        position="top-center"
         reverseOrder={false}
         toastOptions={{
           className: "",

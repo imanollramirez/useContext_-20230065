@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap');
+
 .login-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f5f6fa;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .dashboard-button 
+  {
+    box-shadow: 0 4px 4px rgba(0,0,0,0.08);
+    margin: 2px;
   }
   
   .login-form {
@@ -22,14 +30,16 @@
     color: #2d3436;
     text-align: center;
     font-weight: 600;
+    font-size: 2rem;
   }
   
   .login-form label {
     display: flex;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #636e72;
     gap: 0.4rem;
+    font-family: "Ancizar Sans", sans-serif;
   }
   
   .login-form input {
@@ -39,6 +49,7 @@
     font-size: 1rem;
     background: #f9fafb;
     transition: border 0.2s;
+    font-family: "Ancizar Sans", sans-serif;
   }
   
   .login-form input:focus {

@@ -15,16 +15,23 @@ const Dashboard = () =>
         }
     };
 
+    const Information = () => {
+            navigate("/information")
+    };
+
     return (
         <>
         <div className="dashboard-container">
             <div className="dashboard-card">
                 <h1 className="dashboard-title">¡Welcome to Dashboard!</h1>
                 <p className="dashboard-user">
-                    Hi, <span>{user} || "Usuario logeado" </span>
+                    Hi, <span>{user}</span>
                 </p>
                 <button className="dashboard-button" onClick={handeLogOut}>
                     Log Out
+                </button>
+                <button className="dashboard-button" onClick={Information}>
+                    Information
                 </button>
             </div>
         </div>

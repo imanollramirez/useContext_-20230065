@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { createContext, useContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 import {toast} from "react-hot-toast";
@@ -10,19 +10,17 @@ export const AuthProvider = ({ children }) => {
     const Login = async (email,password) => {
         if(!email || !password)
         {
-            toast.error("Please, fill the fields!")
             return;
         }
-        else if(email == "correo@correo.com" && password == "123456")
+        else if(email === "correo@correo.com" && password === "123456")
         {
             localStorage.setItem("user",JSON.stringify({email}));
             setUser(email);
             setIsLoggedIn(true);
-
-            toast.success("Log in successfully!");
         }
         else{
             toast.error("Incorrect credentials, try again!");
+            return;
         }
     };
 
@@ -31,11 +29,11 @@ export const AuthProvider = ({ children }) => {
           localStorage.removeItem("user");
           setUser(null);
           setIsLoggedIn(false);
-          toast.success("Sesión cerrada.");
+          toast.success("Loged out!.");
           return true;
         } catch (error) {
-          console.error("Error al cerrar sesión:", error);
-          toast.error("Error al cerrar sesión.");
+          console.error("Error logging out:", error);
+          toast.error("Error.");
           return false;
         }
       };

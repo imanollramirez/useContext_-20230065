@@ -2,7 +2,8 @@ import './App.css';
 import { AuthProvider } from "./context/AuthContext";
 import  { BrowserRouter, Routes, Route } from "react-router-dom";
 import Information from "./pages/Information";
-import Dashboard from "./pages/Dashborad";
+import Information2 from "./pages/Information2";
+import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -16,6 +17,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/information" element={<Information />} />
           </Route>
+          <Route path="/information2" element={<Information2 />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
